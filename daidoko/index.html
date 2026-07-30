@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>だいどこ — 写真を撮るだけで、レシピが完成。｜レシピ管理・買い物リスト・食材管理アプリ</title>
+    <meta
+      name="description"
+      content="だいどこは、料理の写真からAIがレシピを起こし、家族で育てていくレシピ手帳アプリ。URL取り込み・買い物リスト・食材の在庫管理・料理中モードまで、台所の一連の流れをひとつに。Android版を無料配信中。"
+    />
+    <link rel="canonical" href="https://keisato848.github.io/daidoko/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="だいどこ — 写真を撮るだけで、レシピが完成。" />
+    <meta
+      property="og:description"
+      content="料理の写真からAIがレシピを起こす、家族で育てるレシピ手帳。買い物リストと食材在庫まで、台所の流れをひとつに。"
+    />
+    <meta property="og:url" content="https://keisato848.github.io/daidoko/" />
+    <meta property="og:image" content="https://keisato848.github.io/daidoko/img/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="img/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0805;
+        --gold: #c9a16a;
+        --text: #dcc9a8;
+        --rule: #2e2418;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          'Hiragino Kaku Gothic ProN', 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--gold);
+      }
+      .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      /* ── hero ── */
+      header {
+        text-align: center;
+        padding: 64px 0 48px;
+        border-bottom: 1px solid var(--rule);
+      }
+      header img.icon {
+        width: 88px;
+        height: 88px;
+        border-radius: 20px;
+        border: 1px solid var(--rule);
+      }
+      .logo {
+        font-family: 'Shippori Mincho', 'Yu Mincho', serif;
+        font-size: 40px;
+        color: var(--gold);
+        letter-spacing: 0.18em;
+        margin: 18px 0 2px;
+      }
+      .romaji {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 15px;
+        letter-spacing: 0.34em;
+        color: var(--gold);
+        opacity: 0.7;
+        margin: 0 0 26px;
+      }
+      h1 {
+        font-family: 'Shippori Mincho', 'Yu Mincho', serif;
+        font-size: 27px;
+        font-weight: 500;
+        line-height: 1.6;
+        margin: 0 0 14px;
+        color: #f0e2c8;
+      }
+      .lead {
+        margin: 0 auto 30px;
+        max-width: 560px;
+        font-size: 15px;
+        opacity: 0.86;
+      }
+      .badge img {
+        height: 62px;
+      }
+      .note {
+        font-size: 13px;
+        opacity: 0.6;
+        margin-top: 6px;
+      }
+      /* ── sections ── */
+      section {
+        padding: 54px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      h2 {
+        font-family: 'Shippori Mincho', 'Yu Mincho', serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--gold);
+        letter-spacing: 0.08em;
+        margin: 0 0 26px;
+        text-align: center;
+      }
+      .video {
+        position: relative;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        aspect-ratio: 9 / 16;
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        padding: 20px 22px;
+        background: #100c07;
+      }
+      .card h3 {
+        font-size: 16px;
+        margin: 0 0 8px;
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .card p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.84;
+      }
+      .shots {
+        display: flex;
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+      }
+      .shots img {
+        width: 200px;
+        flex: 0 0 auto;
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        scroll-snap-align: center;
+      }
+      .cta {
+        text-align: center;
+      }
+      footer {
+        padding: 34px 0 56px;
+        text-align: center;
+        font-size: 13px;
+        opacity: 0.66;
+      }
+      footer a {
+        margin: 0 10px;
+        white-space: nowrap;
+      }
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 22px;
+        }
+        .logo {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <img class="icon" src="img/icon.png" alt="だいどこ アプリアイコン" />
+        <p class="logo">臺所</p>
+        <p class="romaji">DAIDOKO</p>
+        <h1>写真を撮るだけで、レシピが完成。</h1>
+        <p class="lead">
+          作った料理を撮る。それだけで、材料と手順がレシピになって残ります。<br />
+          買い物リストも、冷蔵庫の中身も、家族の「作った！」も、ひとつの台所に。
+        </p>
+        <p class="badge">
+          <a href="https://play.google.com/store/apps/details?id=com.daidoko.app">
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png"
+              alt="Google Play で手に入れよう"
+            />
+          </a>
+        </p>
+        <p class="note">Android 版・無料 / iOS 版は準備中</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <h2>20 秒でわかる、だいどこ</h2>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/XsiIi-8pEX8"
+            title="だいどこ 紹介動画"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>できること</h2>
+        <div class="features">
+          <div class="card">
+            <h3>写真からレシピ</h3>
+            <p>
+              料理の写真を撮るだけで、AI が材料と手順を起こします。レシピを書き起こす手間なく、作った記録がそのまま蔵書になります。
+            </p>
+          </div>
+          <div class="card">
+            <h3>URL・レシートから取り込み</h3>
+            <p>
+              レシピサイトの URL を貼れば材料と手順を自動で整形。買い物のレシートを撮れば、買った食材をまとめて在庫に登録できます。
+            </p>
+          </div>
+          <div class="card">
+            <h3>買い物リストと食材の在庫</h3>
+            <p>
+              レシピの足りない材料をワンタップで買い物リストへ。買ったものはタップひとつで在庫に移り、残りが少なくなれば知らせます。
+            </p>
+          </div>
+          <div class="card">
+            <h3>家族で育てるレシピ帳</h3>
+            <p>
+              家族の「作った！」がホームに並びます。誰がいつ何を作ったかが残り、レシピは家族みんなの手で少しずつ育っていきます。
+            </p>
+          </div>
+          <div class="card">
+            <h3>料理中モード</h3>
+            <p>
+              手順を大きく 1 ステップずつ表示。画面は消えず、タイマーは手順の文中から自動で拾います。濡れた手でもスワイプだけで進めます。
+            </p>
+          </div>
+          <div class="card">
+            <h3>手元に残る、静かな設計</h3>
+            <p>
+              レシピは端末の中に保存され、アカウント登録は不要。バックアップの書き出しにも対応しています。夜の台所に似合う、暗く落ち着いた画面。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>画面</h2>
+        <div class="shots">
+          <img src="img/shot-1.jpg" alt="レシピ詳細" loading="lazy" />
+          <img src="img/shot-2.jpg" alt="写真からレシピを作る" loading="lazy" />
+          <img src="img/shot-3.jpg" alt="AI が起こしたレシピ" loading="lazy" />
+          <img src="img/shot-4.jpg" alt="ホーム（家族の調理タイムライン）" loading="lazy" />
+          <img src="img/shot-5.jpg" alt="料理中モード" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>今日の一品から、はじめる</h2>
+        <p class="lead">インストールしてすぐ使えます。アカウント登録も、料金もかかりません。</p>
+        <p class="badge">
+          <a href="https://play.google.com/store/apps/details?id=com.daidoko.app">
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/ja_badge_web_generic.png"
+              alt="Google Play で手に入れよう"
+            />
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          <a href="https://play.google.com/store/apps/details?id=com.daidoko.app">Google Play</a>
+          <a href="https://gist.github.com/keisato848/49fb9a73f3a1c9952548388f288c383c"
+            >プライバシーポリシー</a
+          >
+        </p>
+        <p>Google Play および Google Play ロゴは Google LLC の商標です。</p>
+      </div>
+    </footer>
+  </body>
+</html>
