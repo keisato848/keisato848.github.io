@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>なに落ちた？ — 一瞬で落ちたモノを当てる、反射神経クイズ</title>
+    <meta
+      name="description"
+      content="落ちてくるのは一瞬だけ。何が落ちたか、6 つの中から当てるだけのゲームです。遊ぶほど速く・小さく・見えにくくなります。無料。"
+    />
+    <link rel="canonical" href="https://keisato848.github.io/ochimono/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="なに落ちた？ — 一瞬で落ちたモノを当てる" />
+    <meta
+      property="og:description"
+      content="落ちてくるのは一瞬だけ。6 つの中から当てるだけ。遊ぶほど速く・小さく・見えにくくなります。"
+    />
+    <meta property="og:url" content="https://keisato848.github.io/ochimono/" />
+    <style>
+      :root {
+        --bg: #0b0f1a;
+        --surface: #161b2b;
+        --rule: #2a3247;
+        --text: #f5f7fa;
+        --muted: #b7c0d8;
+        --accent: #ffd166;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          'Hiragino Kaku Gothic ProN',
+          'Noto Sans JP',
+          system-ui,
+          -apple-system,
+          sans-serif;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        text-align: center;
+        padding: 72px 0 48px;
+        border-bottom: 1px solid var(--rule);
+      }
+      header h1 {
+        font-size: 34px;
+        margin: 0 0 8px;
+        letter-spacing: 0.04em;
+      }
+      header p.lead {
+        color: var(--muted);
+        margin: 0;
+        font-size: 17px;
+      }
+      section {
+        padding: 44px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      h2 {
+        font-size: 22px;
+        color: var(--accent);
+        margin: 0 0 16px;
+      }
+      ul {
+        padding-left: 1.2em;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      dl {
+        margin: 0;
+      }
+      dt {
+        font-weight: 700;
+        margin-top: 20px;
+      }
+      dd {
+        margin: 4px 0 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        border-radius: 14px;
+        padding: 18px 22px;
+      }
+      footer {
+        padding: 32px 0 56px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+      footer a {
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <h1>なに落ちた？</h1>
+        <p class="lead">落ちてくるのは一瞬だけ。何が落ちたか、6 つの中から当ててください。</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <h2>どんなゲームか</h2>
+        <p>
+          画面の上から物がひとつ落ちてきます。見えるのは一瞬です。<br />
+          落ちきったあとに 6 つの選択肢が出るので、何が落ちたかを選ぶだけ。ルールはこれだけです。
+        </p>
+        <ul>
+          <li>正解を重ねるほど、落ちる速さが上がり、物が小さくなり、見えにくくなります</li>
+          <li>「ふつう」は 274 問目まで、「むずかしい」は 214 問目まで変化が続きます</li>
+          <li>「化け物」はレベル番号に上限がありません</li>
+          <li>その日だけの「今日の挑戦」は、全員が同じ問題を遊びます</li>
+        </ul>
+        <p>無料で遊べます。アカウント登録はありません。広告が表示されます。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>アカウント登録は必要ですか</dt>
+          <dd>不要です。氏名・メールアドレス・電話番号などは一切取得しません。</dd>
+
+          <dt>ランキングはどう決まりますか</dt>
+          <dd>
+            モードごとの自己ベストを更新したときだけ、点数がサーバーに送られます。遊んでいる最中に記録が送られることはありません。同じ人が何度も載らないよう、アプリが自分で作るランダムな文字列で重複を防いでいます。この文字列から個人を特定することはできません。
+          </dd>
+
+          <dt>国はどうやって判定していますか</dt>
+          <dd>
+            初回に自分で選んでいただいた国です。位置情報も、端末の地域設定からの自動取得も使いません。選ばずに遊ぶこともできますし、あとからいつでも変更できます。
+          </dd>
+
+          <dt>記録が消えました</dt>
+          <dd>
+            端末内の記録はアプリをアンインストールすると消えます。サーバー上の記録も 60
+            日を過ぎると自動的に削除されます。
+          </dd>
+
+          <dt>広告を減らせますか</dt>
+          <dd>
+            ゲームの最中に広告が割り込むことはありません。全画面の広告は、結果画面で「もう一度」を押した直後だけです。動画広告は、こちらから押したときにだけ再生されます。
+          </dd>
+
+          <dt>不具合を見つけました</dt>
+          <dd>
+            下の連絡先までお知らせください。端末の機種と、どの画面で起きたかを添えていただけると助かります。
+          </dd>
+        </dl>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>お問い合わせ・サポート</h2>
+        <div class="card">
+          <p>
+            ご質問・不具合のご報告・ご要望は、下記までお寄せください。確認のうえ順次お返事します。
+          </p>
+          <p><a href="mailto:habnk1227@gmail.com">habnk1227@gmail.com</a></p>
+        </div>
+        <p>
+          データの取り扱いについては<a
+            href="https://gist.github.com/keisato848/999798aff25d84477c31a95ccd41e870"
+            >プライバシーポリシー</a
+          >をご覧ください。
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          <a href="mailto:habnk1227@gmail.com">お問い合わせ</a>
+          <a href="https://gist.github.com/keisato848/999798aff25d84477c31a95ccd41e870"
+            >プライバシーポリシー</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
