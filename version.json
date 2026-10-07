@@ -1,6 +1,6 @@
 {
-  "latestVersion": "1.3.0",
+  "latestVersion": "1.5.0",
   "message": null,
-  "updatedAt": "2026-09-18",
+  "updatedAt": "2026-10-07",
   "_comment": "アプリが起動時に読む。https://keisato848.github.io/version.json へ公開する。**リリースがストアに反映されてから latestVersion を上げる** — 先に上げるとまだ無い版への更新を促す"
 }
